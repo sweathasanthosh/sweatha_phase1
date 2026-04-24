@@ -13,7 +13,7 @@ let add = 20 + 5;
 console.log(add);
 
 // condition
-if (myAge >= 19) {
+if (myAge >= 18) {
   console.log("Eligible");
 } else {
   console.log("Not Eligible");
