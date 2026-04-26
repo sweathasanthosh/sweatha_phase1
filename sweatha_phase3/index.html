@@ -1,21 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Phase 3 Work</title>
+  <title>Level 2 Tasks</title>
 </head>
 <body>
 
-  <h1>My JS Practice</h1>
+  <h1 id="title">JavaScript Level 2</h1>
 
-  <!-- Even Odd -->
-  <h3>Check Even or Odd</h3>
-  <input id="number">
-  <button onclick="showResult()">Click</button>
-  <p id="ans"></p>
+  <button onclick="changeText()">Change Text</button>
+  <button onclick="changeColor()">Change Color</button>
 
-  <!-- Array -->
+  <h3>Even or Odd</h3>
+  <input type="number" id="num">
+  <button onclick="checkNumber()">Check</button>
+  <p id="result"></p>
+
   <h3>Items</h3>
-  <ul id="myList"></ul>
+  <ul id="list"></ul>
+  <button onclick="addItem()">Add Item</button>
+  <button onclick="removeItem()">Remove Item</button>
 
   <script src="script.js"></script>
+
 </body>
 </html>

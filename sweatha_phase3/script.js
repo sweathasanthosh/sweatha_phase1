@@ -1,57 +1,83 @@
-// ===== TASK 1 =====
+function print(msg) {
+  let div = document.getElementById("output");
+  let p = document.createElement("p");
+  p.textContent = msg;
+  div.appendChild(p);
+}
 
-// variables
-var myName = "Sweatha";
-let myAge = 19;
-const city = "kochi";
+var a = 10;
+let name = "Sweatha";
+const pi = 3.14;
 
-// datatype
-let status = true;
+print("Type of a: " + typeof a);
+print("Type of name: " + typeof name);
 
-// operator
-let add = 20 + 5;
-console.log(add);
+let sum = 10 + 5;
+print("Sum: " + sum);
 
-// condition
-if (myAge >= 18) {
-  console.log("Eligible");
+if (a > 5) {
+  print("Greater than 5");
 } else {
-  console.log("Not Eligible");
+  print("Less than or equal to 5");
 }
 
-// loop
-for (let i = 0; i < 5; i++) {
-  console.log("Count:", i);
+for (let i = 1; i <= 3; i++) {
+  print("Number: " + i);
 }
 
-
-// ===== TASK 2 =====
-
-// function
-function evenOdd(n) {
-  if (n % 2 == 0) {
-    return "Number is Even";
-  } else {
-    return "Number is Odd";
-  }
+function checkEvenOdd(num) {
+  return num % 2 === 0 ? "Even" : "Odd";
 }
 
-// button function
-function showResult() {
-  let num = document.getElementById("number").value;
-  let res = evenOdd(num);
-  document.getElementById("ans").innerText = res;
+const multiply = (x, y) => x * y;
+
+function checkNumber() {
+  let num = document.getElementById("num").value;
+  document.getElementById("result").innerText = checkEvenOdd(num);
 }
 
+let items = ["Apple", "Banana", "Mango"];
 
-// array
-let things = ["Pen", "Book", "Bottle"];
+items.push("Orange");
 
-// display
-let ul = document.getElementById("myList");
+items.pop();
 
-for (let i = 0; i < things.length; i++) {
+let upperItems = items.map(item => item.toUpperCase());
+print("Uppercase: " + upperItems);
+
+let filtered = items.filter(item => item !== "Banana");
+print("Filtered: " + filtered);
+
+let list = document.getElementById("list");
+
+items.forEach(item => {
   let li = document.createElement("li");
-  li.innerText = things[i];
-  ul.appendChild(li);
+  li.innerText = item;
+  list.appendChild(li);
+});
+
+function changeText() {
+  document.getElementById("title").innerText = "Text Changed!";
+  print("Text updated");
+}
+
+function changeColor() {
+  document.querySelector("#title").style.color = "blue";
+  print("Color changed");
+}
+
+function addItem() {
+  let li = document.createElement("li");
+  li.innerText = "New Item";
+  list.appendChild(li);
+  print("Item added");
+}
+
+function removeItem() {
+  if (list.lastChild) {
+    list.removeChild(list.lastChild);
+    print("Item removed");
+  } else {
+    print("No item to remove");
+  }
 }
