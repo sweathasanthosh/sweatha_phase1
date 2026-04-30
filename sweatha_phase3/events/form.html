@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <h2>Form</h2>
+        <form id="loginform">
+            <label>Username:</label>
+            <input id="username"  type="text" required><br><br>
+
+            <label>Password:</label>
+            <input id="pass"type="password" required maxlength="8"><br><br>
+
+            <button>login</button>
+            <button id="btn" type="reset">clear</button>
+        </form>
+        <p id="msg"></p>
+    <script>
+        let loginform = document.getElementById("loginform");
+        let username = document.getElementById("username");
+        let pass = document.getElementById("pass");
+        let msg = document.getElementById("msg");
+
+        loginform.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (username.value === "" || pass.value === "") {
+                msg.textContent = "please fill all fields";
+                msg.style.color = "red";
+                return;
+            }
+
+            else if (pass.value.length < 8) {
+                msg.textContent = "password must contain 8 letters";
+                msg.style.color = "purple";
+                return;
+            }
+        else {
+            msg.textContent = "login successful";
+            msg.style.color = "green";
+        }
+        });
+    </script>    
+</body>
+</html>

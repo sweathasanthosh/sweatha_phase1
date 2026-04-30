@@ -1,0 +1,32 @@
+h1{
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    margin-bottom: 25px;
+    background-color:rgb(205, 205, 195);
+    padding: 25px;
+    text-transform: capitalize;
+}
+body{
+    background-color: rgb(105, 100, 134);
+    text-align: center;
+}
+form{
+    background-color: rgb(44, 40, 70);
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+button:hover{
+    background-color: rgb(190, 190, 174);
+    color: black;
+}
+
+.error{
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}

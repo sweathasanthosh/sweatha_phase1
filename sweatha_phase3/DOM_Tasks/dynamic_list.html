@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List</title>
+</head>
+
+<body style="font-family: Arial; background-color: #f4f4f4; text-align: center; padding-top: 60px;">
+
+    <h2 style="color: #333;">Dynamic List</h2>
+
+    <input type="text" id="itemInput" placeholder="Enter an item"
+        style="padding: 10px; width: 220px; border: 1px solid #ccc; border-radius: 5px;">
+
+    <button id="addItemBtn"
+        style="padding: 10px 15px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Add Item
+    </button>
+
+    <ul id="list" style="list-style: none; padding: 0; margin-top: 20px;"></ul>
+
+    <script>
+        document.getElementById("addItemBtn").addEventListener("click", function() {
+            const itemInput = document.getElementById("itemInput");
+            const itemText = itemInput.value.trim();
+
+            if (itemText !== "") {
+                const listItem = document.createElement("li");
+
+                listItem.style.backgroundColor = "white";
+                listItem.style.margin = "10px auto";
+                listItem.style.padding = "10px";
+                listItem.style.width = "250px";
+                listItem.style.border = "1px solid #ccc";
+                listItem.style.borderRadius = "5px";
+
+                listItem.textContent = itemText;
+
+                document.getElementById("list").appendChild(listItem);
+                itemInput.value = "";
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button</title>
+</head>
+
+<body style="background-color: #f4f4f4; font-family: Arial; text-align: center; padding-top: 100px;">
+
+    <button id="toggleBtn" 
+        style="background-color: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+        Toggle
+    </button>
+
+    <p id="toggleText" 
+        style="margin-top: 20px; font-size: 18px; color: #333;">
+        This text will be toggled.
+    </p>       
+
+    <script>
+        document.getElementById("toggleBtn").addEventListener("click", function() {
+            const toggleText = document.getElementById("toggleText");
+            if (toggleText.style.display === "none") {
+                toggleText.style.display = "block";
+            } else {
+                toggleText.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>

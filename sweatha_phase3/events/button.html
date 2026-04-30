@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button_click</title>
+</head>
+<body>
+    <h2>Event:Button click</h2>
+   <button id="btn" >Tap Here</button>
+   <p id="para">Get more information about it</p>
+
+<script>
+    let button=document.getElementById("btn");
+    let para=document.getElementById("para");
+    button.addEventListener("click",function() {
+        para.textContent="button clicked";
+    });
+
+</script>
+    
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+
+<body style="font-family: Arial; background-color: #f4f4f4; text-align: center; padding-top: 50px;">
+
+    <h2 style="color: #333;">To Do List</h2>
+
+    <input type="text" id="taskInput" placeholder="Enter a task"
+        style="padding: 10px; width: 200px; border: 1px solid #ccc; border-radius: 5px;">
+
+    <button id="addTaskBtn" onclick="addtodo()"
+        style="padding: 10px 15px; background-color: green; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Add Task
+    </button>
+
+    <ul id="taskList" style="list-style: none; padding: 0; margin-top: 20px;"></ul>
+
+    <script>
+        function addtodo(){
+            let taskInput = document.getElementById("taskInput");
+            let taskText = taskInput.value.trim();  
+
+            if(taskText == "") return;
+
+            let listItem = document.createElement("li");
+            listItem.style.margin = "10px";
+            listItem.style.padding = "10px";
+            listItem.style.backgroundColor = "white";
+            listItem.style.border = "1px solid #ccc";
+            listItem.style.borderRadius = "5px";
+
+            let span = document.createElement("span");
+            span.textContent = taskText;
+
+            let editBtn = document.createElement("button");
+            editBtn.textContent = "Edit";   
+            editBtn.style.marginLeft = "10px";
+            editBtn.style.backgroundColor = "orange";
+            editBtn.style.color = "white";
+            editBtn.style.border = "none";
+            editBtn.style.padding = "5px 10px";
+            editBtn.style.borderRadius = "3px";
+
+            editBtn.addEventListener("click", function() {
+                let newTaskText = prompt("Edit task:", span.textContent);
+                if (newTaskText !== null && newTaskText.trim() !== "") {
+                    span.textContent = newTaskText.trim();
+                }
+            });
+
+            let deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";       
+            deleteBtn.style.marginLeft = "5px";
+            deleteBtn.style.backgroundColor = "red";
+            deleteBtn.style.color = "white";
+            deleteBtn.style.border = "none";
+            deleteBtn.style.padding = "5px 10px";
+            deleteBtn.style.borderRadius = "3px";
+
+            deleteBtn.addEventListener("click", function() {
+                listItem.remove();
+            });
+
+            listItem.appendChild(span);
+            listItem.appendChild(editBtn);
+            listItem.appendChild(deleteBtn);
+
+            document.getElementById("taskList").appendChild(listItem);
+
+            taskInput.value = "";
+        }
+    </script>
+    
+</body>
+</html>

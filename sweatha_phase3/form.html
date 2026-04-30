@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <h1> login to your account </h1>
+    <form id="form">
+        <input type="text" id="username" placeholder="Username "><br><br>
+        <small id="usererror" class="error"></small><br>
+        <input type="password" id="password" placeholder="Password"><br><br>
+        <small id="passerror" class="error"></small><br>
+        <button type="submit">Login</button><br><br>
+    </form>
+
+    <script>
+        document.getElementById("form").addEventListener("submit",function(e){
+            e.preventDefault();
+
+            let username=document.getElementById("username").value.trim();
+            let password=document.getElementById("password").value.trim();
+            let usererror=document.getElementById("usererror");
+            let passerror=document.getElementById("passerror");
+
+            usererror.textContent="" ;
+            passerror.textContent="" ;
+
+            let isValid= true;
+
+            if ( username === "") {
+                usererror.textContent="username is required";
+                isValid= false;
+            }else if(username.length <3) {
+                usererror.textContent="minimum 3 characters is required"
+                isValid=false;
+            }
+
+            if ( password === "") {
+                passerror.textContent="password is required"
+                isValid= false;
+            }else if(password.length <8) {
+                passrerror.textContent="minimum 8 characters is required"
+                isValid=false;
+            }
+            if (isValid){
+                alert("login succesfull");
+            }
+
+
+
+
+        });
+    </script>
+</body>
+</html>
